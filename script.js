@@ -15,7 +15,7 @@ loginForm.addEventListener('submit', function(e) {
         alert("স্বাগতম নবাব! লগইন সফল হয়েছে।");
         
         // লগইন সফল হলে আপনার পোর্টফোলিও পেজে নিয়ে যাবে
-        window.location.href = "nobabbilsdev-portfolio.html"; 
+        window.location.href = "dashboard.html"; 
     } else {
         // ভুল হলে ওয়ার্নিং দিবে
         alert("ভুল আইডি অথবা পাসওয়ার্ড! আবার চেষ্টা করুন।");
