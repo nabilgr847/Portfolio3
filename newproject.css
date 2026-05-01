@@ -1,0 +1,217 @@
+/* ১. ইউনিভার্সাল রিসেট (Universal Reset) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* এটি এলিমেন্টের সাইজ ঠিক রাখে */
+}
+
+/* ২. এইচটিএমএল এবং ফন্ট সেটআপ */
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #05070a; /* লাক্সারি ডার্ক ব্যাকগ্রাউন্ড */
+    scroll-behavior: smooth;
+}
+
+/* ৩. টেক্সট সিলেকশন কালার (ঐচ্ছিক কিন্তু প্রিমিয়াম লুক দেয়) */
+::selection {
+    background-color: #38bdf8; /* টেক্সট সিলেক্ট করলে নীল হবে */
+    color: #000;
+}
+/* ১. সব রিসেট করা */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ২. পুরো ব্যাকগ্রাউন্ড এবং সেন্টারিং */
+body {
+    /* এখানে ছবিটা অ্যাড করা হয়েছে */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
+                      url('html.jpg'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* ৩. লগইন র‍্যাপার */
+.login-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ৪. লগইন কার্ড (আসল ম্যাজিক এখানে) */
+.login-card {
+    /* ১. ব্যাকগ্রাউন্ডকে আরও স্বচ্ছ এবং ঝাপসা করা (Glass Effect) */
+    background: rgba(10, 20, 35, 0.65); 
+    backdrop-filter: blur(15px); /* পেছনের অংশ ঝাপসা দেখাবে, যা লাক্সারি লুক দেয় */
+    -webkit-backdrop-filter: blur(15px);
+    
+    /* ২. প্যাডিং এবং আকার */
+    padding: 50px 40px;
+    border-radius: 24px; /* কোনাগুলো আরও স্মুথ এবং গোল করা */
+    width: 90%;
+    max-width: 420px;
+    
+    /* ৩. বর্ডারকে উজ্জ্বল করা */
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    
+    /* ৪. ডাবল শ্যাডো (Depth তৈরির জন্য) */
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.8), /* গভীর কালো ছায়া */
+        0 0 20px rgba(56, 189, 248, 0.15);    /* সায়ান আভা */
+        
+    text-align: center;
+    transition: transform 0.3s ease; /* নাড়াচাড়া করলে স্মুথ লাগবে */
+}
+
+/* ৫. কার্ডের ওপর মাউস নিলে হালকা নড়াচড়া (Hover Effect) */
+.login-card:hover {
+    transform: translateY(-5px);
+    border: 1px solid rgba(56, 189, 248, 0.5);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(56, 189, 248, 0.2);
+}
+
+
+/* ৫. আপনার সেই রাজকীয় নাম */
+.brand-title {
+    font-size: 2.8rem; /* আরও একটু বড় এবং বোল্ড দেখাবে */
+    color: #ffffff;
+    line-height: 1.0;  /* Nobab Bils এবং Dev এর গ্যাপ একদম পারফেক্ট করবে */
+    margin-bottom: 25px;
+    font-weight: 900;
+    letter-spacing: 1px; /* অক্ষরগুলোর মাঝে হালকা ফাঁকা জায়গা আভিজাত্য বাড়ায় */
+    
+    /* মাল্টি-লেয়ার গ্লো (সবচেয়ে গুরুত্বপূর্ণ পরিবর্তন) */
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8), /* সাদা উজ্জ্বল আভা */
+        0 0 20px rgba(56, 189, 248, 0.4),  /* হালকা নীল আভা */
+        0 0 30px rgba(56, 189, 248, 0.2);  /* গভীর সাইবার ভাইব */
+    
+    /* হালকা এনিমেশন: লেখাটি মৃদুভাবে উজ্জ্বল হবে এবং নিভবে */
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+/* টাইটেলের জন্য গ্লো এনিমেশন */
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(56, 189, 248, 0.4);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 35px rgba(56, 189, 248, 0.7);
+    }
+}
+
+
+
+h2 {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+/* ৬. ইনপুট গ্রুপ স্টাইল */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.7rem;
+    color: #38bdf8;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 5px;
+    color: white;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+/* ৭. লগইন বাটন */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #38bdf8;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 2px;
+}
+
+.login-btn:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+}
+
+/* ৮. নিচের নোট */
+.footer-note {
+    margin-top: 25px;
+    font-size: 0.65rem;
+    color: #ef4444; /* লাল রঙের সতর্কবার্তা */
+    letter-spacing: 1px;
+}
+
+/* ৯. আপনার সিলেকশন কোড */
+::selection {
+    background-color: #38bdf8;
+    color: #000;
+}
+/* Authorization Required লেখাটি সাদা করার জন্য */
+.login-card h2 {
+    color: #ffffff !important; /* লেখাটি পুরোপুরি সাদা হবে */
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* নিচের ছোট লেখাটি (Please sign in...) সাদা করার জন্য */
+.login-card p {
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ইনপুট লেবেলগুলো (USER ID, PASSWORD) নীল রঙ করার জন্য */
+.input-group label {
+    color: #4da3ff !important;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
